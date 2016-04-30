@@ -99,7 +99,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2015/10/12/Nodejs-require-module/" data-id="cinmyf69u0004ykd11y0w7n5z" class="article-share-link">Share</a>
+      <a data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2015/10/12/Nodejs-require-module/" data-id="cinmyv8fr000298d1hz64ii7e" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog.github.io/tags/Javascript/">Javascript</a></li></ul>
@@ -141,7 +141,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2015/09/22/Nodejs-callback/" data-id="cinmyf69l0001ykd151iyhe91" class="article-share-link">Share</a>
+      <a data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2015/09/22/Nodejs-callback/" data-id="cinmyv8fw000598d1udjqjvd4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog.github.io/tags/Javascript/">Javascript</a></li></ul>
@@ -186,7 +186,50 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2015/09/21/Nodejs文件操作/" data-id="cinmyf69w0007ykd1wxamsul5" class="article-share-link">Share</a>
+      <a data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2015/09/21/Nodejs文件操作/" data-id="cinmyv8fx000798d1ryc88xbs" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog.github.io/tags/Javascript/">Javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-javascript-原型继承关联" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog.github.io/2015/04/30/javascript-原型继承关联/" class="article-date">
+  <time datetime="2015-04-30T09:40:50.000Z" itemprop="datePublished">2015-04-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog.github.io/2015/04/30/javascript-原型继承关联/">javascript 原型继承关联</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Javascript中的对象有一个特殊的Prototype内置属性，其实就是对于其他对象的引用。几乎所有的对象在创建时Prototype属性都会被赋予一个非空的值。</p>
+<p>使用call 改变 this<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.Test = <span class="function"><span class="keyword">function</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(str);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    Fn1.call(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> Fn2();</span><br><span class="line">obj.Test(<span class="string">"This is Fn2"</span>); <span class="comment">//This is Fn2</span></span><br></pre></td></tr></table></figure></p>
+<p>prototype 原型<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line">Fn1.prototype.Test = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(e);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> Fn1();</span><br><span class="line">obj.Test(&amp;quot;This is Fn1 prototype&amp;quot;); <span class="comment">//This is Fn1 prototype</span></span><br></pre></td></tr></table></figure></p>
+<p>prototype关联<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn1</span>(<span class="params"></span>)</span>&#123; &#125;</span><br><span class="line"> </span><br><span class="line">Fn1.prototype.Show = <span class="function"><span class="keyword">function</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(str);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn2</span>(<span class="params"></span>)</span>&#123; &#125;</span><br><span class="line"> </span><br><span class="line">Fn2.prototype = <span class="built_in">Object</span>.create(Fn1.prototype); </span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> f2 = <span class="keyword">new</span> Fn2();</span><br><span class="line"> </span><br><span class="line">f2.Show(<span class="string">"This is Fn2"</span>); <span class="comment">//This is Fn2</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> f1 = <span class="keyword">new</span> Fn1();</span><br><span class="line">f1.Show(<span class="string">"This is Fn1"</span>); <span class="comment">//This is Fn1</span></span><br></pre></td></tr></table></figure></p>
+<p>Object.create会创建一个新的对象，并把它关联到我们指定的对象。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2015/04/30/javascript-原型继承关联/" data-id="cinmyv8fy000998d1ur2umstl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog.github.io/tags/Javascript/">Javascript</a></li></ul>
@@ -229,7 +272,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2014/12/29/Linux常用命令/" data-id="cinmyf69p0002ykd1esm3txbp" class="article-share-link">Share</a>
+      <a data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2014/12/29/Linux常用命令/" data-id="cinmyv8fn000198d1plnv90n3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog.github.io/tags/linux/">linux</a></li></ul>
@@ -267,7 +310,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2014/12/29/ifconfig命令/" data-id="cinmyf69v0005ykd1z81e1lkj" class="article-share-link">Share</a>
+      <a data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2014/12/29/ifconfig命令/" data-id="cinmyv8fv000498d18luhoriv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog.github.io/tags/linux/">linux</a></li></ul>
@@ -310,7 +353,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog.github.io/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog.github.io/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog.github.io/archives/2014/12/">December 2014</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog.github.io/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog.github.io/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog.github.io/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog.github.io/archives/2014/12/">December 2014</a></li></ul>
     </div>
   </div>
 
@@ -335,11 +378,11 @@
           </li>
         
           <li>
-            <a href="/blog.github.io/2014/12/29/Linux常用命令/">Linux常用命令</a>
+            <a href="/blog.github.io/2015/04/30/javascript-原型继承关联/">javascript 原型继承关联</a>
           </li>
         
           <li>
-            <a href="/blog.github.io/2014/12/29/ifconfig命令/">ifconfig命令</a>
+            <a href="/blog.github.io/2014/12/29/Linux常用命令/">Linux常用命令</a>
           </li>
         
       </ul>
