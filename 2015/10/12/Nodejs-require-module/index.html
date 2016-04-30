@@ -3,24 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Nodejs文件操作 | itellyou | 我想告诉你</title>
+  <title>Nodejs require module | itellyou | 我想告诉你</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="引入fs文件模块1var js = require(&apos;fs&apos;);
-读文件12var file = fs.readFileSync(&quot;./test.txt&quot;, &apos;utf8&apos;);console.log(file);
-写文件12var data = &quot;Hello 文件操作!\r\n文件第二行&quot;;fs.writeFileSync(&apos;./message.txt&apos;, data);">
+  <meta name="description" content="如何使用require？123var os = require(&apos;os&apos;); //os模块console.log(&apos;CPU架构:&apos; + os.arch());
+自定义模块123exports.ShowName = function(name)&amp;#123;  console.log(name);&amp;#125;
+引用模块，调用方法12var test = require(&apos;./test&apos;);test.S">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nodejs文件操作">
-<meta property="og:url" content="http://itellyouu.github.io/blog.github.io/2015/09/21/Nodejs文件操作/index.html">
+<meta property="og:title" content="Nodejs require module">
+<meta property="og:url" content="http://itellyouu.github.io/blog.github.io/2015/10/12/Nodejs-require-module/index.html">
 <meta property="og:site_name" content="itellyou | 我想告诉你">
-<meta property="og:description" content="引入fs文件模块1var js = require(&apos;fs&apos;);
-读文件12var file = fs.readFileSync(&quot;./test.txt&quot;, &apos;utf8&apos;);console.log(file);
-写文件12var data = &quot;Hello 文件操作!\r\n文件第二行&quot;;fs.writeFileSync(&apos;./message.txt&apos;, data);">
-<meta property="og:updated_time" content="2016-04-29T14:59:06.682Z">
+<meta property="og:description" content="如何使用require？123var os = require(&apos;os&apos;); //os模块console.log(&apos;CPU架构:&apos; + os.arch());
+自定义模块123exports.ShowName = function(name)&amp;#123;  console.log(name);&amp;#125;
+引用模块，调用方法12var test = require(&apos;./test&apos;);test.S">
+<meta property="og:updated_time" content="2016-04-30T09:35:38.228Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nodejs文件操作">
-<meta name="twitter:description" content="引入fs文件模块1var js = require(&apos;fs&apos;);
-读文件12var file = fs.readFileSync(&quot;./test.txt&quot;, &apos;utf8&apos;);console.log(file);
-写文件12var data = &quot;Hello 文件操作!\r\n文件第二行&quot;;fs.writeFileSync(&apos;./message.txt&apos;, data);">
+<meta name="twitter:title" content="Nodejs require module">
+<meta name="twitter:description" content="如何使用require？123var os = require(&apos;os&apos;); //os模块console.log(&apos;CPU架构:&apos; + os.arch());
+自定义模块123exports.ShowName = function(name)&amp;#123;  console.log(name);&amp;#125;
+引用模块，调用方法12var test = require(&apos;./test&apos;);test.S">
   
     <link rel="alternate" href="/atom.xml" title="itellyou | 我想告诉你" type="application/atom+xml">
   
@@ -75,10 +75,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Nodejs文件操作" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Nodejs-require-module" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog.github.io/2015/09/21/Nodejs文件操作/" class="article-date">
-  <time datetime="2015-09-21T14:54:59.000Z" itemprop="datePublished">2015-09-21</time>
+    <a href="/blog.github.io/2015/10/12/Nodejs-require-module/" class="article-date">
+  <time datetime="2015-10-12T09:21:23.000Z" itemprop="datePublished">2015-10-12</time>
 </a>
     
   </div>
@@ -89,7 +89,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Nodejs文件操作
+      Nodejs require module
     </h1>
   
 
@@ -97,16 +97,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="引入fs文件模块"><a href="#引入fs文件模块" class="headerlink" title="引入fs文件模块"></a>引入fs文件模块</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> js = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="读文件"><a href="#读文件" class="headerlink" title="读文件"></a>读文件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> file = fs.readFileSync(<span class="string">"./test.txt"</span>, <span class="string">'utf8'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(file);</span><br></pre></td></tr></table></figure>
-<h3 id="写文件"><a href="#写文件" class="headerlink" title="写文件"></a>写文件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = <span class="string">"Hello 文件操作!\r\n文件第二行"</span>;</span><br><span class="line">fs.writeFileSync(<span class="string">'./message.txt'</span>, data);</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="判断文件是否存在"><a href="#判断文件是否存在" class="headerlink" title="判断文件是否存在"></a>判断文件是否存在</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (fs.existsSync(<span class="string">'./message.txt'</span>)) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'./message.txt 文件存在'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="重命名"><a href="#重命名" class="headerlink" title="重命名"></a>重命名</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fs.writeFileSync(<span class="string">'./message2.txt'</span>, data); <span class="comment">// 再写一个文件</span></span><br><span class="line">fs.renameSync(<span class="string">'./message2.txt'</span>, <span class="string">'./rename.txt'</span>); <span class="comment">// 重命名这个新的文件</span></span><br></pre></td></tr></table></figure>
+        <h6 id="如何使用require？"><a href="#如何使用require？" class="headerlink" title="如何使用require？"></a>如何使用require？</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> os = <span class="built_in">require</span>(<span class="string">'os'</span>); <span class="comment">//os模块</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'CPU架构:'</span> + os.arch());</span><br></pre></td></tr></table></figure>
+<p>自定义模块<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">exports.ShowName = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>引用模块，调用方法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> test = <span class="built_in">require</span>(<span class="string">'./test'</span>);</span><br><span class="line">test.ShowName(<span class="string">"Alan"</span>)</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2015/09/21/Nodejs文件操作/" data-id="cinmyf69w0007ykd1wxamsul5" class="article-share-link">Share</a>
+      <a data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2015/10/12/Nodejs-require-module/" data-id="cinmyf69u0004ykd11y0w7n5z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog.github.io/tags/Javascript/">Javascript</a></li></ul>
@@ -117,19 +115,10 @@
     
 <nav id="article-nav">
   
-    <a href="/blog.github.io/2015/09/22/Nodejs-callback/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Nodejs callback
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog.github.io/2014/12/29/Linux常用命令/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog.github.io/2015/09/22/Nodejs-callback/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Linux常用命令</div>
+      <div class="article-nav-title">Nodejs callback</div>
     </a>
   
 </nav>
@@ -140,7 +129,7 @@
 
 <section id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-Nodejs文件操作" data-title="Nodejs文件操作" data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2015/09/21/Nodejs文件操作/"></div>
+    <div class="ds-thread" data-thread-key="post-Nodejs-require-module" data-title="Nodejs require module" data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2015/10/12/Nodejs-require-module/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

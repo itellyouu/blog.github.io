@@ -3,24 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Nodejs文件操作 | itellyou | 我想告诉你</title>
+  <title>Nodejs callback | itellyou | 我想告诉你</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="引入fs文件模块1var js = require(&apos;fs&apos;);
-读文件12var file = fs.readFileSync(&quot;./test.txt&quot;, &apos;utf8&apos;);console.log(file);
-写文件12var data = &quot;Hello 文件操作!\r\n文件第二行&quot;;fs.writeFileSync(&apos;./message.txt&apos;, data);">
+  <meta name="description" content="What is callbak?看个例子12345678var add = (a, b, cb) =&amp;gt; &amp;#123;  // 不直接 return 而是把结果传递给传入的函数执行  cb(a + b);&amp;#125; add(10, 5, result =&amp;gt; &amp;#123;  console.log(&apos;result:&apos; + result); // 在回调函数中获取结果&amp;#125;)
+cal">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nodejs文件操作">
-<meta property="og:url" content="http://itellyouu.github.io/blog.github.io/2015/09/21/Nodejs文件操作/index.html">
+<meta property="og:title" content="Nodejs callback">
+<meta property="og:url" content="http://itellyouu.github.io/blog.github.io/2015/09/22/Nodejs-callback/index.html">
 <meta property="og:site_name" content="itellyou | 我想告诉你">
-<meta property="og:description" content="引入fs文件模块1var js = require(&apos;fs&apos;);
-读文件12var file = fs.readFileSync(&quot;./test.txt&quot;, &apos;utf8&apos;);console.log(file);
-写文件12var data = &quot;Hello 文件操作!\r\n文件第二行&quot;;fs.writeFileSync(&apos;./message.txt&apos;, data);">
-<meta property="og:updated_time" content="2016-04-29T14:59:06.682Z">
+<meta property="og:description" content="What is callbak?看个例子12345678var add = (a, b, cb) =&amp;gt; &amp;#123;  // 不直接 return 而是把结果传递给传入的函数执行  cb(a + b);&amp;#125; add(10, 5, result =&amp;gt; &amp;#123;  console.log(&apos;result:&apos; + result); // 在回调函数中获取结果&amp;#125;)
+cal">
+<meta property="og:updated_time" content="2016-04-30T09:19:43.065Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nodejs文件操作">
-<meta name="twitter:description" content="引入fs文件模块1var js = require(&apos;fs&apos;);
-读文件12var file = fs.readFileSync(&quot;./test.txt&quot;, &apos;utf8&apos;);console.log(file);
-写文件12var data = &quot;Hello 文件操作!\r\n文件第二行&quot;;fs.writeFileSync(&apos;./message.txt&apos;, data);">
+<meta name="twitter:title" content="Nodejs callback">
+<meta name="twitter:description" content="What is callbak?看个例子12345678var add = (a, b, cb) =&amp;gt; &amp;#123;  // 不直接 return 而是把结果传递给传入的函数执行  cb(a + b);&amp;#125; add(10, 5, result =&amp;gt; &amp;#123;  console.log(&apos;result:&apos; + result); // 在回调函数中获取结果&amp;#125;)
+cal">
   
     <link rel="alternate" href="/atom.xml" title="itellyou | 我想告诉你" type="application/atom+xml">
   
@@ -75,10 +72,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Nodejs文件操作" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Nodejs-callback" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog.github.io/2015/09/21/Nodejs文件操作/" class="article-date">
-  <time datetime="2015-09-21T14:54:59.000Z" itemprop="datePublished">2015-09-21</time>
+    <a href="/blog.github.io/2015/09/22/Nodejs-callback/" class="article-date">
+  <time datetime="2015-09-22T08:51:25.000Z" itemprop="datePublished">2015-09-22</time>
 </a>
     
   </div>
@@ -89,7 +86,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Nodejs文件操作
+      Nodejs callback
     </h1>
   
 
@@ -97,16 +94,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="引入fs文件模块"><a href="#引入fs文件模块" class="headerlink" title="引入fs文件模块"></a>引入fs文件模块</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> js = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="读文件"><a href="#读文件" class="headerlink" title="读文件"></a>读文件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> file = fs.readFileSync(<span class="string">"./test.txt"</span>, <span class="string">'utf8'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(file);</span><br></pre></td></tr></table></figure>
-<h3 id="写文件"><a href="#写文件" class="headerlink" title="写文件"></a>写文件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = <span class="string">"Hello 文件操作!\r\n文件第二行"</span>;</span><br><span class="line">fs.writeFileSync(<span class="string">'./message.txt'</span>, data);</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="判断文件是否存在"><a href="#判断文件是否存在" class="headerlink" title="判断文件是否存在"></a>判断文件是否存在</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (fs.existsSync(<span class="string">'./message.txt'</span>)) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'./message.txt 文件存在'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="重命名"><a href="#重命名" class="headerlink" title="重命名"></a>重命名</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fs.writeFileSync(<span class="string">'./message2.txt'</span>, data); <span class="comment">// 再写一个文件</span></span><br><span class="line">fs.renameSync(<span class="string">'./message2.txt'</span>, <span class="string">'./rename.txt'</span>); <span class="comment">// 重命名这个新的文件</span></span><br></pre></td></tr></table></figure>
+        <h3 id="What-is-callbak"><a href="#What-is-callbak" class="headerlink" title="What is callbak?"></a>What is callbak?</h3><h6 id="看个例子"><a href="#看个例子" class="headerlink" title="看个例子"></a>看个例子</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> add = (a, b, cb) =&gt; &#123;</span><br><span class="line">  <span class="comment">// 不直接 return 而是把结果传递给传入的函数执行</span></span><br><span class="line">  cb(a + b);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">add(<span class="number">10</span>, <span class="number">5</span>, result =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'result:'</span> + result); <span class="comment">// 在回调函数中获取结果</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>callback就是不让程序先去执行下面函数，因为下面的函数可能需要上面执行函数的返回值。</p>
+<p>再看看Nodejs 文件异步回调。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> data = <span class="string">"Hello!"</span>;</span><br><span class="line"> </span><br><span class="line">fs.writeFile(<span class="string">'./test.txt'</span>, data, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'err:'</span> + err);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'File Write End'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Start Callback'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>先输出 Start Callback,再输出 File Write End</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2015/09/21/Nodejs文件操作/" data-id="cinmyf69w0007ykd1wxamsul5" class="article-share-link">Share</a>
+      <a data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2015/09/22/Nodejs-callback/" data-id="cinmyf69l0001ykd151iyhe91" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog.github.io/tags/Javascript/">Javascript</a></li></ul>
@@ -117,19 +113,19 @@
     
 <nav id="article-nav">
   
-    <a href="/blog.github.io/2015/09/22/Nodejs-callback/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog.github.io/2015/10/12/Nodejs-require-module/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Nodejs callback
+          Nodejs require module
         
       </div>
     </a>
   
   
-    <a href="/blog.github.io/2014/12/29/Linux常用命令/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog.github.io/2015/09/21/Nodejs文件操作/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Linux常用命令</div>
+      <div class="article-nav-title">Nodejs文件操作</div>
     </a>
   
 </nav>
@@ -140,7 +136,7 @@
 
 <section id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-Nodejs文件操作" data-title="Nodejs文件操作" data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2015/09/21/Nodejs文件操作/"></div>
+    <div class="ds-thread" data-thread-key="post-Nodejs-callback" data-title="Nodejs callback" data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2015/09/22/Nodejs-callback/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

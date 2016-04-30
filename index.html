@@ -52,12 +52,14 @@
         
           <a class="main-nav-link" href="/blog.github.io/tags/linux">linux</a>
         
+          <a class="main-nav-link" href="/blog.github.io/tags/Javascript">Javascript</a>
+        
       </nav>
       <nav id="sub-nav">
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Søk"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://itellyouu.github.io/blog.github.io"></form>
@@ -67,6 +69,89 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-Nodejs-require-module" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog.github.io/2015/10/12/Nodejs-require-module/" class="article-date">
+  <time datetime="2015-10-12T09:21:23.000Z" itemprop="datePublished">2015-10-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog.github.io/2015/10/12/Nodejs-require-module/">Nodejs require module</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id="如何使用require？"><a href="#如何使用require？" class="headerlink" title="如何使用require？"></a>如何使用require？</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> os = <span class="built_in">require</span>(<span class="string">'os'</span>); <span class="comment">//os模块</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'CPU架构:'</span> + os.arch());</span><br></pre></td></tr></table></figure>
+<p>自定义模块<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">exports.ShowName = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>引用模块，调用方法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> test = <span class="built_in">require</span>(<span class="string">'./test'</span>);</span><br><span class="line">test.ShowName(<span class="string">"Alan"</span>)</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2015/10/12/Nodejs-require-module/" data-id="cinmyf69u0004ykd11y0w7n5z" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog.github.io/tags/Javascript/">Javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Nodejs-callback" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog.github.io/2015/09/22/Nodejs-callback/" class="article-date">
+  <time datetime="2015-09-22T08:51:25.000Z" itemprop="datePublished">2015-09-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog.github.io/2015/09/22/Nodejs-callback/">Nodejs callback</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="What-is-callbak"><a href="#What-is-callbak" class="headerlink" title="What is callbak?"></a>What is callbak?</h3><h6 id="看个例子"><a href="#看个例子" class="headerlink" title="看个例子"></a>看个例子</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> add = (a, b, cb) =&gt; &#123;</span><br><span class="line">  <span class="comment">// 不直接 return 而是把结果传递给传入的函数执行</span></span><br><span class="line">  cb(a + b);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">add(<span class="number">10</span>, <span class="number">5</span>, result =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'result:'</span> + result); <span class="comment">// 在回调函数中获取结果</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>callback就是不让程序先去执行下面函数，因为下面的函数可能需要上面执行函数的返回值。</p>
+<p>再看看Nodejs 文件异步回调。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> data = <span class="string">"Hello!"</span>;</span><br><span class="line"> </span><br><span class="line">fs.writeFile(<span class="string">'./test.txt'</span>, data, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'err:'</span> + err);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'File Write End'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Start Callback'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>先输出 Start Callback,再输出 File Write End</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2015/09/22/Nodejs-callback/" data-id="cinmyf69l0001ykd151iyhe91" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog.github.io/tags/Javascript/">Javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-Nodejs文件操作" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -101,7 +186,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2015/09/21/Nodejs文件操作/" data-id="cinlucaub0000jwd1tivfwwbr" class="article-share-link">Share</a>
+      <a data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2015/09/21/Nodejs文件操作/" data-id="cinmyf69w0007ykd1wxamsul5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog.github.io/tags/Javascript/">Javascript</a></li></ul>
@@ -144,7 +229,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2014/12/29/Linux常用命令/" data-id="cink7idg60000l0d1cwv77obq" class="article-share-link">Share</a>
+      <a data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2014/12/29/Linux常用命令/" data-id="cinmyf69p0002ykd1esm3txbp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog.github.io/tags/linux/">linux</a></li></ul>
@@ -182,7 +267,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2014/12/29/ifconfig命令/" data-id="cinix8qnx0001s8d1e4m2r1x9" class="article-share-link">Share</a>
+      <a data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2014/12/29/ifconfig命令/" data-id="cinmyf69v0005ykd1z81e1lkj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog.github.io/tags/linux/">linux</a></li></ul>
@@ -216,7 +301,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/blog.github.io/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/blog.github.io/tags/linux/" style="font-size: 20px;">linux</a>
+      <a href="/blog.github.io/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/blog.github.io/tags/linux/" style="font-size: 10px;">linux</a>
     </div>
   </div>
 
@@ -225,7 +310,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog.github.io/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog.github.io/archives/2014/12/">December 2014</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog.github.io/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog.github.io/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog.github.io/archives/2014/12/">December 2014</a></li></ul>
     </div>
   </div>
 
@@ -236,6 +321,14 @@
     <h3 class="widget-title">最近的</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/blog.github.io/2015/10/12/Nodejs-require-module/">Nodejs require module</a>
+          </li>
+        
+          <li>
+            <a href="/blog.github.io/2015/09/22/Nodejs-callback/">Nodejs callback</a>
+          </li>
         
           <li>
             <a href="/blog.github.io/2015/09/21/Nodejs文件操作/">Nodejs文件操作</a>
@@ -273,6 +366,8 @@
     <a href="/blog.github.io/" class="mobile-nav-link">首页</a>
   
     <a href="/blog.github.io/tags/linux" class="mobile-nav-link">linux</a>
+  
+    <a href="/blog.github.io/tags/Javascript" class="mobile-nav-link">Javascript</a>
   
 </nav>
     
