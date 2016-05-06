@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>itellyou | 我想告诉你</title>
+  <title>Nodejs callback | itellyou | 我想告诉你</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="404 | not found">
-<meta property="og:type" content="website">
-<meta property="og:title" content="itellyou | 我想告诉你">
-<meta property="og:url" content="http://itellyouu.github.io/blog.github.io/404.html">
+  <meta name="description" content="What is callbak?看个例子12345678var add = (a, b, cb) =&amp;gt; &amp;#123;  // 不直接 return 而是把结果传递给传入的函数执行  cb(a + b);&amp;#125; add(10, 5, result =&amp;gt; &amp;#123;  console.log(&apos;result:&apos; + result); // 在回调函数中获取结果&amp;#125;)
+cal">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nodejs callback">
+<meta property="og:url" content="http://itellyouu.github.io/blog.github.io/2015/09/22/4/index.html">
 <meta property="og:site_name" content="itellyou | 我想告诉你">
-<meta property="og:description" content="404 | not found">
-<meta property="og:updated_time" content="2016-04-27T12:35:13.975Z">
+<meta property="og:description" content="What is callbak?看个例子12345678var add = (a, b, cb) =&amp;gt; &amp;#123;  // 不直接 return 而是把结果传递给传入的函数执行  cb(a + b);&amp;#125; add(10, 5, result =&amp;gt; &amp;#123;  console.log(&apos;result:&apos; + result); // 在回调函数中获取结果&amp;#125;)
+cal">
+<meta property="og:updated_time" content="2016-04-30T09:19:43.065Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="itellyou | 我想告诉你">
-<meta name="twitter:description" content="404 | not found">
+<meta name="twitter:title" content="Nodejs callback">
+<meta name="twitter:description" content="What is callbak?看个例子12345678var add = (a, b, cb) =&amp;gt; &amp;#123;  // 不直接 return 而是把结果传递给传入的函数执行  cb(a + b);&amp;#125; add(10, 5, result =&amp;gt; &amp;#123;  console.log(&apos;result:&apos; + result); // 在回调函数中获取结果&amp;#125;)
+cal">
   
     <link rel="alternate" href="/atom.xml" title="itellyou | 我想告诉你" type="application/atom+xml">
   
@@ -80,45 +83,71 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-4" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog.github.io/404.html" class="article-date">
-  <time datetime="2016-04-27T12:35:13.975Z" itemprop="datePublished">2016-04-27</time>
+    <a href="/blog.github.io/2015/09/22/4/" class="article-date">
+  <time datetime="2015-09-22T08:51:25.000Z" itemprop="datePublished">2015-09-22</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Nodejs callback
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>404 | not found</title>
-</head>
-<body>
-	<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="http://itellyouu.github.io/blog.github.io/" homepagename="回到我的主页"></script>
-</body>
-</html>
+        <h3 id="What-is-callbak"><a href="#What-is-callbak" class="headerlink" title="What is callbak?"></a>What is callbak?</h3><h6 id="看个例子"><a href="#看个例子" class="headerlink" title="看个例子"></a>看个例子</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> add = (a, b, cb) =&gt; &#123;</span><br><span class="line">  <span class="comment">// 不直接 return 而是把结果传递给传入的函数执行</span></span><br><span class="line">  cb(a + b);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">add(<span class="number">10</span>, <span class="number">5</span>, result =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'result:'</span> + result); <span class="comment">// 在回调函数中获取结果</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>callback就是不让程序先去执行下面函数，因为下面的函数可能需要上面执行函数的返回值。</p>
+<p>再看看Nodejs 文件异步回调。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> data = <span class="string">"Hello!"</span>;</span><br><span class="line"> </span><br><span class="line">fs.writeFile(<span class="string">'./test.txt'</span>, data, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'err:'</span> + err);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'File Write End'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Start Callback'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>先输出 Start Callback,再输出 File Write End</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://itellyouu.github.io/blog.github.io/404.html" data-id="cinohchk00000e0d1fkmkcqrp" class="article-share-link">Share</a>
+      <a data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2015/09/22/4/" data-id="cinoibj3j0005egd1uif46ent" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog.github.io/tags/Javascript/">Javascript</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/blog.github.io/2015/10/12/5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Nodejs require module
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog.github.io/2015/09/21/3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Nodejs文件操作</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
 
 <section id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="page-undefined" data-title="" data-url="http://itellyouu.github.io/blog.github.io/404.html"></div>
+    <div class="ds-thread" data-thread-key="post-4" data-title="Nodejs callback" data-url="http://itellyouu.github.io/blog.github.io/blog.github.io/2015/09/22/4/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
